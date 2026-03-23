@@ -14,9 +14,13 @@ An exercise to create a Python package, build it, test it, distribute it, and us
 - instructions for how to set up any environment variables and import any starter data into the database, as necessary, for the system to operate correctly when run.
 - if there are any "secret" configuration files, such as .env or similar files, that are not included in the version control repository, examples of these files, such as env.example, with dummy data must be included in the repository and exact instructions for how to create the proper configuration files and what their contents should be must be supplied to the course admins by the due date.
 
-## Description
+# Description
 
 This package provides a simple Pomodoro timer system that allows developers to create, store, and manage timers programmatically.
+
+## PyPl Link
+
+[PyPl](foo.boo)
 
 ## Contributors
 
@@ -25,6 +29,14 @@ This package provides a simple Pomodoro timer system that allows developers to c
 - [Name](github-page-link)
 - [Name](github-page-link)
 - [Name](github-page-link)
+
+# For Users
+
+## Installation
+
+## API Documentation
+
+# For Developers
 
 ## How to Contribute
 
@@ -69,13 +81,19 @@ This package provides a simple Pomodoro timer system that allows developers to c
 
 1. Make sure you've completed all the setup steps above.
 
-2. Direct to the root directory of the project:
+2. Place all the test files under:
+
+   ```
+   3-package-emperor_penguins/tests
+   ```
+
+3. Direct to the root directory of the project:
 
    ```shell
    $ cd xxx/3-package-emperor_penguins
    ```
 
-3. Run the automatic coverage test script:
+4. Run the automatic coverage test script:
 
    ```shell 
    $ source run-test.sh
@@ -83,3 +101,4 @@ This package provides a simple Pomodoro timer system that allows developers to c
 
    - Ideally, this will launch an automatic testing and display the coverage result in the default web browser.
 
+<img src="./img/coverage-example.png" alt="coverage-example.png"  />
