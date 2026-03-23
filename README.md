@@ -14,6 +14,18 @@ An exercise to create a Python package, build it, test it, distribute it, and us
 - instructions for how to set up any environment variables and import any starter data into the database, as necessary, for the system to operate correctly when run.
 - if there are any "secret" configuration files, such as .env or similar files, that are not included in the version control repository, examples of these files, such as env.example, with dummy data must be included in the repository and exact instructions for how to create the proper configuration files and what their contents should be must be supplied to the course admins by the due date.
 
+## Description
+
+This package provides a simple Pomodoro timer system that allows developers to create, store, and manage timers programmatically.
+
+## Contributors
+
+- [Michael Miao](https://github.com/miaom-Konkon)
+- [Name](github-page-link)
+- [Name](github-page-link)
+- [Name](github-page-link)
+- [Name](github-page-link)
+
 ## How to Contribute
 
 1. If you use Windows OS, switch to git bash and then proceed. If you use a Unix-like OS, just proceed. 
