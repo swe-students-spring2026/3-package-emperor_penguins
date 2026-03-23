@@ -1,54 +1,69 @@
-import unittest
+import pytest
 from pomodoro.timer import Timer
 from pomodoro.storage import Storage
 
-class TestStorage(unittest.TestCase):
-    def setUp(self):
-        self.storage = Storage()
 
-    def test_create_and_get_timer(self):
-        timer_id = self.storage.create_timer(25)
-        timer = self.storage.get_timer(timer_id)
-        self.assertIsInstance(timer, Timer)
-        self.assertEqual(timer.duration, 25)
+@pytest.fixture
+def storage():
+    return Storage()
 
-    def test_list_timers(self):
-        timer_id1 = self.storage.create_timer(15)
-        timer_id2 = self.storage.create_timer(30)
-        timers = self.storage.list_timers()
-        self.assertIn(timer_id1, timers)
-        self.assertIn(timer_id2, timers)
-        self.assertEqual(len(timers), 2)
 
-    def test_update_timer(self):
-        timer_id = self.storage.create_timer(20)
-        self.storage.update_timer(timer_id, duration=40)
-        timer = self.storage.get_timer(timer_id)
-        self.assertEqual(timer.duration, 40)
+def test_create_and_get_timer(storage):
+    timer_id = storage.create_timer(25)
+    timer = storage.get_timer(timer_id)
 
-    def test_update_invalid_attribute(self):
-        timer_id = self.storage.create_timer(10)
-        with self.assertRaises(ValueError):
-            self.storage.update_timer(timer_id, invalid_attr=123)
+    assert isinstance(timer, Timer)
+    assert timer.duration == 25
 
-    def test_update_nonexistent_timer(self):
-        with self.assertRaises(ValueError) as context:
-            self.storage.update_timer("nonexistent_id", duration=30)
-        self.assertIn("Timer nonexistent_id does not exist.", str(context.exception))
 
-    def test_delete_timer(self):
-        timer_id = self.storage.create_timer(10)
-        self.storage.delete_timer(timer_id)
-        with self.assertRaises(ValueError):
-            self.storage.get_timer(timer_id)
+def test_list_timers(storage):
+    timer_id1 = storage.create_timer(15)
+    timer_id2 = storage.create_timer(30)
 
-    def test_get_nonexistent_timer(self):
-        with self.assertRaises(ValueError):
-            self.storage.get_timer("nonexistent_id")
+    timers = storage.list_timers()
 
-    def test_delete_nonexistent_timer(self):
-        with self.assertRaises(ValueError):
-            self.storage.delete_timer("nonexistent_id")
+    assert timer_id1 in timers
+    assert timer_id2 in timers
+    assert len(timers) == 2
 
-if __name__ == "__main__":
-    unittest.main()
+
+def test_update_timer(storage):
+    timer_id = storage.create_timer(20)
+
+    storage.update_timer(timer_id, duration=40)
+    timer = storage.get_timer(timer_id)
+
+    assert timer.duration == 40
+
+
+def test_update_invalid_attribute(storage):
+    timer_id = storage.create_timer(10)
+
+    with pytest.raises(ValueError):
+        storage.update_timer(timer_id, invalid_attr=123)
+
+
+def test_update_nonexistent_timer(storage):
+    with pytest.raises(ValueError) as exc_info:
+        storage.update_timer("nonexistent_id", duration=30)
+
+    assert "Timer nonexistent_id does not exist." in str(exc_info.value)
+
+
+def test_delete_timer(storage):
+    timer_id = storage.create_timer(10)
+
+    storage.delete_timer(timer_id)
+
+    with pytest.raises(ValueError):
+        storage.get_timer(timer_id)
+
+
+def test_get_nonexistent_timer(storage):
+    with pytest.raises(ValueError):
+        storage.get_timer("nonexistent_id")
+
+
+def test_delete_nonexistent_timer(storage):
+    with pytest.raises(ValueError):
+        storage.delete_timer("nonexistent_id")
