@@ -13,3 +13,26 @@ An exercise to create a Python package, build it, test it, distribute it, and us
 - instructions for how to configure and run all parts of your project for any developer on any platform - these instructions must work!
 - instructions for how to set up any environment variables and import any starter data into the database, as necessary, for the system to operate correctly when run.
 - if there are any "secret" configuration files, such as .env or similar files, that are not included in the version control repository, examples of these files, such as env.example, with dummy data must be included in the repository and exact instructions for how to create the proper configuration files and what their contents should be must be supplied to the course admins by the due date.
+
+## Steps necessary to contribute to our project.
+
+```shell
+# First, clone this repository.
+git clone https://github.com/swe-students-spring2026/3-package-emperor_penguins.git
+```
+If you use a windows, switch to git bash and then proceed. If you use a unix-like os, just proceed.
+
+Second, create a virtual environmenet using `pipenv`.
+
+Please make sure you global python interpreter has `pipenv` installed.
+
+If not, do this:
+```shell
+# install pipenv globally
+pip install pipenv
+```
+After you have `pipenv` installed,
+```shell
+# Activate a virtual environment and drop yourself into a new shell that uses that virtualenv’s python.
+pipenv shell
+``` 
