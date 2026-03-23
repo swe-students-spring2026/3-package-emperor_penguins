@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "645af03188fd3637465e51f4c8a2d419c0a53738c6904c9bf441bad5871bb055"
+            "sha256": "261816a1e7635d00c69083db5e91c558ec1f3061331a5aa197ce2c9af27b3394"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": ">=3.12"
+            "python_version": "3.13"
         },
         "sources": [
             {
@@ -15,7 +15,17 @@
             }
         ]
     },
-    "default": {},
+    "default": {
+        "emoji": {
+            "hashes": [
+                "sha256:205296793d66a89d88af4688fa57fd6496732eb48917a87175a023c8138995eb",
+                "sha256:eae4ab7d86456a70a00a985125a03263a5eac54cd55e51d7e184b1ed3b6757e4"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==2.15.0"
+        }
+    },
     "develop": {
         "certifi": {
             "hashes": [
