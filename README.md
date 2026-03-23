@@ -36,3 +36,7 @@ After you have `pipenv` installed,
 # Activate a virtual environment and drop yourself into a new shell that uses that virtualenv’s python.
 pipenv shell
 ``` 
+```shell
+# Download dependencies (for now, we'll edit the toml file to make dependencies more manageable)
+pipenv install emoji
+```
