@@ -14,29 +14,93 @@ An exercise to create a Python package, build it, test it, distribute it, and us
 - instructions for how to set up any environment variables and import any starter data into the database, as necessary, for the system to operate correctly when run.
 - if there are any "secret" configuration files, such as .env or similar files, that are not included in the version control repository, examples of these files, such as env.example, with dummy data must be included in the repository and exact instructions for how to create the proper configuration files and what their contents should be must be supplied to the course admins by the due date.
 
-## Steps necessary to contribute to our project.
+# Description
 
-```shell
-# First, clone this repository.
-git clone https://github.com/swe-students-spring2026/3-package-emperor_penguins.git
-```
-If you use a windows, switch to git bash and then proceed. If you use a unix-like os, just proceed.
+This package provides a simple Pomodoro timer system that allows developers to create, store, and manage timers programmatically.
 
-Second, create a virtual environmenet using `pipenv`.
+## PyPl Link
 
-Please make sure you global python interpreter has `pipenv` installed.
+[PyPl](foo.boo)
 
-If not, do this:
-```shell
-# install pipenv globally
-pip install pipenv
-```
-After you have `pipenv` installed,
-```shell
-# Activate a virtual environment and drop yourself into a new shell that uses that virtualenv’s python.
-pipenv shell
-``` 
-```shell
-# Download dependencies (for now, we'll edit the toml file to make dependencies more manageable)
-pipenv install emoji
-```
+=======
+## Contributors
+
+- [Michael Miao](https://github.com/miaom-Konkon)
+- [Name](github-page-link)
+- [Name](github-page-link)
+- [Name](github-page-link)
+- [Name](github-page-link)
+
+# For Users
+
+## Installation
+
+## API Documentation
+
+# For Developers
+
+## How to Contribute
+
+1. If you use Windows OS, switch to git bash and then proceed. If you use a Unix-like OS, just proceed. 
+
+2. Clone the repository:
+
+   ```shell
+   $ git clone https://github.com/swe-students-spring2026/3-package-emperor_penguins.git
+   ```
+
+3. Create a virtual environment using `pipenv`. Please make sure you global python interpreter has `pipenv` installed. If not, install it:
+
+   ```shell
+   $ python -m pip install pipenv
+   ```
+
+4. After you have `pipenv` installed, install all dependencies and activate a virtual environment
+
+   ```shell
+   $ python -m pipenv install --dev
+   $ python -m pipenv shell
+   ```
+
+5. Now you should've noticed a prompt prefix in the terminal:
+
+   ```shell
+   (3-package-emperor_penguins) xxx$ 
+   ```
+
+   This indicates that you've been placed in a virtual environment!
+
+6. *(optional)* Note that in some cases after your entry to the virtual environment, the texts that you code in the prompt might be invisible. Whenever this happens, run:
+
+   ```shell
+   $ stty echo
+   ```
+
+   and return. Now the texts you code should be visible again.
+
+## Run Coverage Tests
+
+1. Make sure you've completed all the setup steps above.
+
+2. Place all the test files under:
+
+   ```
+   3-package-emperor_penguins/tests
+   ```
+
+3. Direct to the root directory of the project:
+
+   ```shell
+   $ cd xxx/3-package-emperor_penguins
+   ```
+
+4. Run the automatic coverage test script:
+
+   ```shell 
+   $ source run-test.sh
+   ```
+
+   - Ideally, this will launch an automatic testing and display the coverage result in the default web browser.
+
+<img src="./img/coverage-example.png" alt="coverage-example.png"  />
+>>>>>>> main
