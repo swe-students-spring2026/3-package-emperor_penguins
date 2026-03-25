@@ -34,7 +34,7 @@ def render_sub_progress(current_mins: int, total_mins, is_resting = False) -> st
     empty_icon = emoji.emojize(":white_medium_square: ") # the trailing space is on purpose
 
     length = 10
-    filled_length = int(length * (current_mins / total_mins))
+    filled_length = int(length * (current_mins / total_mins)) if total_mins > 0 else 0
     progress_bar = progress_icon * filled_length + empty_icon * (length - filled_length)
     specifics = f"{current_mins}min/{total_mins}min"
     output = f"current sub-session progress ({label}): {progress_bar} [{specifics}]"
