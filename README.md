@@ -103,4 +103,3 @@ This package provides a simple Pomodoro timer system that allows developers to c
    - Ideally, this will launch an automatic testing and display the coverage result in the default web browser.
 
 <img src="./img/coverage-example.png" alt="coverage-example.png"  />
->>>>>>> main

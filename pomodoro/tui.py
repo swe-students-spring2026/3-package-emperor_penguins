@@ -57,14 +57,14 @@ def finish_session():
     """Call this when the timer hits 100% so the next print starts on a new line."""
     print()
 
-if __name__ == "__main__":
-    print()
-    for i in range(10, 26):
-        # demo for studying
-        time.sleep(1)
-        render_full(2, 4, i, 25)
-    for i in range(1, 6):
-        # demo for resting
-        time.sleep(1)
-        render_full(2, 4, i, 5, is_resting=True)
-    finish_session()
+# if __name__ == "__main__":
+#     print()
+#     for i in range(10, 26):
+#         # demo for studying
+#         time.sleep(1)
+#         render_full(2, 4, i, 25)
+#     for i in range(1, 6):
+#         # demo for resting
+#         time.sleep(1)
+#         render_full(2, 4, i, 5, is_resting=True)
+#     finish_session()
