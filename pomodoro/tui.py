@@ -12,7 +12,6 @@ else if it is rest time:
     curent sub-session rest progress: [sleepy.....⬜⬜⬜⬜] (3min/5min)
 """
 import sys
-import time # remove this before commit, just for testing purposes
 import emoji
 
 
