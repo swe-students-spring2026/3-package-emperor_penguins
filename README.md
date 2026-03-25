@@ -25,7 +25,7 @@ This package provides a simple Pomodoro timer system that allows developers to c
 ## Contributors
 
 - [Michael Miao](https://github.com/miaom-Konkon)
-- [Name](github-page-link)
+- [Simon Ni](https://github.com/NarezIn)
 - [Name](github-page-link)
 - [Name](github-page-link)
 - [Name](github-page-link)
