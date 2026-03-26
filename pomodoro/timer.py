@@ -1,4 +1,5 @@
-# Timer: Just a framework
+# Timer 
+import time
 
 class Timer:
     def __init__(self, duration: int):
