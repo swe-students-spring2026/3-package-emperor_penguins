@@ -80,7 +80,7 @@ if __name__ == "__main__":
         is_resting = (status['phase'] == "break")
 
         render_full(current_sub_num, total_sub_num, current_mins, total_mins, is_resting)
-        time.sleep(0.2)
+        time.sleep(1)
 
     finish_session()
     print("====================================================\n")
