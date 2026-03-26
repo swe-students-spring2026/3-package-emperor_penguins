@@ -52,3 +52,22 @@ class Timer:
                 self._last_tick_time = None
         
         return self.remaining
+    
+    def is_finished(self):
+        return self.remaining == 0
+
+    def get_progress(self):
+        return self.duration - self.remaining
+
+    def get_display_time(self):
+        minutes = self.remaining // 60
+        seconds = self.remaining % 60
+        return f"{minutes:02d}:{seconds:02d}"
+
+    def get_status(self):
+        return {
+            "duration": self.duration,
+            "remaining": self.remaining,
+            "status": self.status,
+            "display_time": self.get_display_time(),
+        }
