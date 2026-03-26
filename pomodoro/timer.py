@@ -17,5 +17,5 @@ class Timer:
         self.status = "stopped"
 
     def tick(self):
-        # TODO: logic for counting down the time.
-        pass 
+        if self.status == "running" and self.remaining > 0:
+            self.remaining -= 1
