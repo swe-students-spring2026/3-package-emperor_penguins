@@ -29,41 +29,47 @@ class PomodoroSession:
         self.current_phase = "work"
         self.completed_cycles = 0 
 
-    def tick(self): 
-        if self.current_phase == "work":
+    def tick(self, total_cycles = None): 
+        if self.current_phase is None:
+            return
+        elif self.current_phase == "work":
             self.work_timer.tick()
 
             if self.work_timer.remaining <=0:
-                self.switch_phase()
+                self.switch_phase(total_cycles)
         else:
             self.break_timer.tick()
-            
             if self.break_timer.remaining <= 0:
-                self.switch_phase()
+                self.switch_phase(total_cycles)
 
-    def switch_phase(self):
+    def switch_phase(self, total_cycles = None):
         if self.current_phase == "work":
             self.current_phase = "break"
             self.break_timer.reset()
             self.break_timer.start()
-            self.completed_cycles +=1
 
         else:
-            self.current_phase = "work"
-            self.work_timer.reset()
-            self.work_timer.start()
+            self.completed_cycles += 1
+            if total_cycles is not None and self.completed_cycles >= total_cycles:
+                self.current_phase = None
+            else:
+                self.current_phase = "work"
+                self.work_timer.reset()
+                self.work_timer.start()
     
     def get_status(self):
         if self.current_phase == "work":
             return{
                 "phase": "work",
                 "remaining" : self.work_timer.remaining,
-                "status" : self.work_timer.status
+                "status" : self.work_timer.status,
+                "total": self.work_timer.duration
             }
         else:
             return{
                 "phase": "break",
                 "remaining": self.break_timer.remaining,
-                "status": self.break_timer.status
+                "status": self.break_timer.status,
+                "total": self.break_timer.duration
             }
             
