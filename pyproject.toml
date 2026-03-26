@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pomodoro"
+version = "1.0.0"
+description = "A simple terminal-based Pomodoro timer system"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {file = "LICENSE"}
+authors = [
+    {name="Michael Miao"},
+    {name="Simon Ni"},
+    {name="Name"},
+    {name="Name"},
+    {name="Name"}
+]
+keywords = ["pomodoro", "timer", "productivity", "TUI"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "emoji"
+]
+
+[tool.setuptools.packages.find]
+where = ["pomodoro"]
+
+[project.urls]
+Homepage = "https://github.com/swe-students-spring2026/3-package-emperor_penguins"
+Documentation = "https://github.com/swe-students-spring2026/3-package-emperor_penguins#readme"

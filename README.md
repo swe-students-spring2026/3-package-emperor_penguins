@@ -22,7 +22,6 @@ This package provides a simple Pomodoro timer system that allows developers to c
 
 [PyPl](foo.boo)
 
-=======
 ## Contributors
 
 - [Michael Miao](https://github.com/miaom-Konkon)
@@ -35,7 +34,48 @@ This package provides a simple Pomodoro timer system that allows developers to c
 
 ## Installation
 
-## API Documentation
+Install the package via PyPI:
+
+```bash
+$ python -m pip install pomodoro
+```
+
+or if you are installing locally:
+
+```shell
+$ git clone https://github.com/swe-students-spring2026/3-package-emperor_penguins.git
+$ cd 3-package-emperor_penguins
+$ python -m pip install .
+```
+
+## Running the Pomodoro Timer
+
+After installing, you can run the terminal-based Pomodoro timer as follows:
+
+```shell
+$ python -m pomodoro.tui --work 25 --break 5 --cycles 4
+```
+
+### Parameters
+
+- `--work` (`-w`) — Work duration in minutes (default: 25)
+- `--break` (`-b`) — Break duration in minutes (default: 5)
+- `--cycles` (`-c`) — Number of Pomodoro cycles (default: 4)
+- `--version` (`-v`) — Show the version of the Pomodoro TUI and exit
+
+### Example
+
+```
+python -m pomodoro.tui -w 10 -b 3 -c 2
+```
+
+This will start a Pomodoro session with:
+
+- 10 minutes of work
+- 3 minutes of break
+- 2 cycles in total
+
+The terminal will show the current sub-session and a progress bar for either studying or resting.
 
 # For Developers
 
