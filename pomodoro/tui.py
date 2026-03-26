@@ -1,6 +1,6 @@
 """
 Since our Pomodoro has a terminal-based user interface (TUI), 
-this library has utility functioins to display data in console/terminal.
+this library has utility functions to display data in console/terminal.
 Users should see the timer and session info (the progress bars, the ticking clock, the tables) 
 appearing in the command line.
 
@@ -13,6 +13,8 @@ else if it is rest time:
 """
 import sys
 import emoji
+import time
+from pomodoro.session import PomodoroSession
 
 
 def render_ith_sub(current_sub_num: int, total_sub_num: int) -> str:
@@ -55,15 +57,31 @@ def render_full(current_sub_num: int, total_sub_num: int,
 def finish_session():
     """Call this when the timer hits 100% so the next print starts on a new line."""
     print()
+    sys.stdout.flush()
 
-# if __name__ == "__main__":
-#     print()
-#     for i in range(10, 26):
-#         # demo for studying
-#         time.sleep(1)
-#         render_full(2, 4, i, 25)
-#     for i in range(1, 6):
-#         # demo for resting
-#         time.sleep(1)
-#         render_full(2, 4, i, 5, is_resting=True)
-#     finish_session()
+if __name__ == "__main__":
+    work_duration = 10
+    break_duration = 5
+    total_cycles = 2
+
+    session = PomodoroSession(work_duration, break_duration)
+    session.total_cycles = total_cycles
+
+    print("\n====================================================\n")
+    session.start()
+    while session.current_phase is not None:
+        session.tick(total_cycles)
+        status = session.get_status()
+
+        current_sub_num = min(session.completed_cycles + 1, total_cycles)
+        total_sub_num = total_cycles
+        current_mins = status['remaining']
+        total_mins = status.get('total', current_mins)
+        is_resting = (status['phase'] == "break")
+
+        render_full(current_sub_num, total_sub_num, current_mins, total_mins, is_resting)
+        time.sleep(1)
+
+    finish_session()
+    print("====================================================\n")
+    print("** Pomodoro session completed! **\n")
