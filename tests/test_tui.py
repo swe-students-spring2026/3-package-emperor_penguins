@@ -1,3 +1,6 @@
+"""
+Tests for pomodoro.tui module.
+"""
 import pytest
 import emoji
 from pomodoro import tui

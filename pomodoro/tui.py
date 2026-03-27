@@ -25,6 +25,8 @@ def render_sub_progress(current_mins: int, total_mins, is_resting = False) -> st
     """
     Display the progress of the current sub-session, either studying or resting.
     """
+    if total_mins == 0:
+        raise ZeroDivisionError("Total_mins cannot be zero when rendering sub progress!")
     if is_resting:
         progress_icon = emoji.emojize(":sleepy_face:")
         label = "resting"
