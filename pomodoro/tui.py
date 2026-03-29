@@ -68,7 +68,7 @@ def render_sub_progress(current: int, total: int, is_resting: bool = False) -> s
 
     # Choose emoji
     filled_emoji = emoji.emojize(":sleepy_face:") if is_resting else emoji.emojize(":tomato:")
-    empty_emoji = emoji.emojize(":white_medium_square:") + " "  # append space for spacing test
+    empty_emoji = emoji.emojize(":white_medium_square:") + " " # append space for spacing test
 
     # Clamp current to [0, total]
     current = max(0, min(current, total))

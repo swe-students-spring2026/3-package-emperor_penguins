@@ -48,7 +48,7 @@ def test_render_sub_progress_empty_icon_present():
 
 def test_empty_icon_spacing():
     result = tui.render_sub_progress(0, 10)
-    assert "⬜ " in result  # includes space
+    assert "◻️ " in result  # includes space
 
 def test_render_sub_progress_full_bar_no_empty():
     result = tui.render_sub_progress(10, 10)
