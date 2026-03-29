@@ -53,7 +53,7 @@ $ python -m pip install .
 After installing, you can run the terminal-based Pomodoro timer as follows:
 
 ```shell
-$ python -m pomodoro.tui --work 25 --break 5 --cycles 4
+$ python -m pomodoro --work 25 --break 5 --cycles 4
 ```
 
 ### Parameters
