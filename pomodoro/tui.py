@@ -19,6 +19,8 @@ def render_ith_sub(current_sub_num: int, total_sub_num: int) -> str:
     """
     Display which sub-session the user is currently at.
     """
+    if total_sub_num <= 0:
+        raise ValueError("Total_sub_num must be greater than zero when rendering ith sub-session!")
     return f"current sub-session: [{current_sub_num}/{total_sub_num}]"
 
 def render_sub_progress(current_mins: int, total_mins, is_resting = False) -> str:
@@ -32,8 +34,10 @@ def render_sub_progress(current_mins: int, total_mins, is_resting = False) -> st
         progress_icon = emoji.emojize(":tomato:")
         label = "studying"
     empty_icon = emoji.emojize(":white_medium_square: ") # the trailing space is on purpose
-
     length = 10
+    # Raise ZeroDivisionError.
+    if total_mins == 0:
+        raise ZeroDivisionError("Total minutes cannot be zero when rendering sub-session progress!")
     filled_length = int(length * (current_mins / total_mins)) if total_mins > 0 else 0
     progress_bar = progress_icon * filled_length + empty_icon * (length - filled_length)
     specifics = f"{current_mins}min/{total_mins}min"
