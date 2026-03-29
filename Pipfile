@@ -7,6 +7,7 @@ name = "pypi"
 emoji = "*"
 
 [dev-packages]
+build = "*"
 certifi = "==2026.2.25"
 coverage = "==7.13.5"
 distlib = "==0.4.0"

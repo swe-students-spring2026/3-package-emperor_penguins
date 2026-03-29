@@ -28,7 +28,10 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["pomodoro"]
+where = ["."]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
 
 [project.urls]
 Homepage = "https://github.com/swe-students-spring2026/3-package-emperor_penguins"
