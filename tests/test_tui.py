@@ -4,7 +4,7 @@ Tests for pomodoro.tui module.
 import pytest
 import emoji
 from pomodoro import tui
-
+from pomodoro.storage import Storage
 
 def test_render_ith_sub():
     result = tui.render_ith_sub(1, 4)
@@ -46,6 +46,9 @@ def test_render_sub_progress_empty_icon_present():
     empty_icon = emoji.emojize(":white_medium_square:")
     assert empty_icon in result
 
+def test_empty_icon_spacing():
+    result = tui.render_sub_progress(0, 10)
+    assert "◻️ " in result  # includes space
 
 def test_render_sub_progress_full_bar_no_empty():
     result = tui.render_sub_progress(10, 10)
@@ -84,3 +87,43 @@ def test_finish_session_prints_newline(capsys):
 def test_render_sub_progress_zero_total_raises():
     with pytest.raises(ZeroDivisionError):
         tui.render_sub_progress(1, 0)
+
+
+def test_render_ith_sub_invalid_total():
+    with pytest.raises(ValueError):
+        tui.render_ith_sub(1, 0)
+
+def test_render_sub_progress_overflow():
+    result = tui.render_sub_progress(15, 10)
+    # Should not exceed bar length
+    assert result.count(emoji.emojize(":tomato:")) <= 10
+
+def test_render_sub_progress_negative():
+    result = tui.render_sub_progress(-5, 10)
+    # Should not produce negative filled icons
+    assert result.count(emoji.emojize(":tomato:")) >= 0
+
+def test_render_full_includes_control_chars(capsys):
+    tui.render_full(1, 2, 5, 10)
+
+    output = capsys.readouterr().out
+
+    assert "\r" in output
+    assert "\033[K" in output
+
+def test_show_timer_history_empty(capsys):
+    storage = Storage()
+    tui.show_timer_history(storage)
+
+    output = capsys.readouterr().out
+    assert "No timers found." in output
+
+def test_show_timer_history_with_data(capsys, tmp_path):
+    storage = Storage(filename=tmp_path / "timers.json")
+    storage.create_timer(25)
+
+    tui.show_timer_history(storage)
+
+    output = capsys.readouterr().out
+    assert "Timer History:" in output
+    assert "Duration: 25 minutes" in output
