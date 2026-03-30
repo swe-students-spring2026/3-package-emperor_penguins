@@ -66,7 +66,7 @@ $ python -m pomodoro --work 25 --break 5 --cycles 4
 ### Example
 
 ```
-python -m pomodoro.tui -w 10 -b 3 -c 2
+python -m pomodoro -w 10 -b 3 -c 2
 ```
 
 This will start a Pomodoro session with:

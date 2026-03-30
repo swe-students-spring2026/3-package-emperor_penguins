@@ -12,8 +12,8 @@ license = {file = "LICENSE"}
 authors = [
     {name="Michael Miao"},
     {name="Simon Ni"},
-    {name="Name"},
-    {name="Name"},
+    {name="Aryaman Nagpal"},
+    {name="Lan Nguyen"},
     {name="Name"}
 ]
 keywords = ["pomodoro", "timer", "productivity", "TUI"]
@@ -32,6 +32,11 @@ where = ["."]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+
+[tool.coverage.run]
+omit = [
+    "*/__main__.py"
+]
 
 [project.urls]
 Homepage = "https://github.com/swe-students-spring2026/3-package-emperor_penguins"
