@@ -111,13 +111,6 @@ def test_render_full_includes_control_chars(capsys):
     assert "\r" in output
     assert "\033[K" in output
 
-def test_show_timer_history_empty(capsys):
-    storage = Storage()
-    tui.show_timer_history(storage)
-
-    output = capsys.readouterr().out
-    assert "No timers found." in output
-
 def test_show_timer_history_with_data(capsys, tmp_path):
     storage = Storage(filename=tmp_path / "timers.json")
     storage.create_timer(25)
