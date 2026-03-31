@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser(description="Run a Pomodoro timer in terminal."
 parser.add_argument("--work", type=int, default=25, help="Work duration in minutes", dest="work_duration")
 parser.add_argument("--break", type=int, default=5, help="Break duration in minutes", dest="break_duration")
 parser.add_argument("--cycles", type=int, default=4, help="Number of Pomodoro cycles")
-parser.add_argument("--version", "-v", action="version", version="Pomodoro 1.0.0", help="Show the version and exit")
+parser.add_argument("--version", "-v", action="version", version="Pomodoro 1.0.2", help="Show the version and exit")
 
 parser.add_argument("--history", action="store_true", help="Show timer history and exit")
 parser.add_argument("--use-timer", type=str, help="Use a previous timer's ID for work duration")
