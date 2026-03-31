@@ -133,5 +133,5 @@ The terminal will show the current sub-session and a progress bar for either stu
    - Ideally, this will launch an automatic testing and display the coverage result in the default web browser.
 
 
-## [Example Code](./example.py)
+## [Example Code]("./example.py")
 <img src="./img/image.png" alt="image.png"  />
