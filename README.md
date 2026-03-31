@@ -134,4 +134,4 @@ The terminal will show the current sub-session and a progress bar for either stu
 
 
 ## [Example Code]("./example.py")
-<img src="./img/image.png" alt="image.png"  />
+<img src="https://raw.githubusercontent.com/swe-students-spring2026/3-package-emperor_penguins/main/img/image.png" alt="image.png"  />
