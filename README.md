@@ -8,7 +8,7 @@ This package provides a simple Pomodoro timer system that allows developers to c
 
 ## PyPl Link
 
-[PyPl](https://pypi.org/project/pomodoro-penguin/1.0.1/)
+[PyPl](https://pypi.org/project/pomodoro-penguin/1.0.2/)
 
 ## Contributors
 
