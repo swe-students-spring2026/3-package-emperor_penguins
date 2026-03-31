@@ -49,17 +49,17 @@ $ python -m pomodoro --work 25 --break 5 --cycles 4
 
 ### Parameters
 
-- `--work` (`-w`) — Work duration in minutes (default: 25)
-- `--break` (`-b`) — Break duration in minutes (default: 5)
-- `--cycles` (`-c`) — Number of Pomodoro cycles (default: 4)
-- `--history` – Print history of Pomodoro cycles with its ID and Durations
+- `--work` - Work duration in minutes (default: 25)
+- `--break` - Break duration in minutes (default: 5)
+- `--cycles` - Number of Pomodoro cycles (default: 4)
+- `--history` - Print history of Pomodoro cycles with its ID and Durations
 - `--use-timer` - Paste timer ID from history and run it normally
-- `--version` (`-v`) — Show the version of the Pomodoro TUI and exit
+- `--version` - Show the version of the Pomodoro TUI and exit
 
-### Example
+### Examples
 
 ```
-python -m pomodoro -w 10 -b 3 -c 2
+python -m pomodoro --work 10 --break 3 --cycles 2
 ```
 
 This will start a Pomodoro session with:
@@ -69,6 +69,20 @@ This will start a Pomodoro session with:
 - 2 cycles in total
 
 The terminal will show the current sub-session and a progress bar for either studying or resting.
+
+```
+python -m pomodoro --history
+```
+This will show a history of pomodoro timers (timer ID, and work duration) that the user used.
+
+```
+python -m pomodoro --user-timer <timer_id>
+```
+This will allow to use an old pomodoro timer, so that the user does not need to type in those lengthy work or break parameters.
+```
+python -m pomodoro --version
+```
+This shows the version of the package that is being used currently.
 
 # For Developers
 
@@ -111,6 +125,9 @@ The terminal will show the current sub-session and a progress bar for either stu
 
    and return. Now the texts you code should be visible again.
 
+## Example Code
+[Link to our example code on Github!](./example.py)
+
 ## Run Coverage Tests
 
 1. Make sure you've completed all the setup steps above.
@@ -135,6 +152,4 @@ The terminal will show the current sub-session and a progress bar for either stu
 
    - Ideally, this will launch an automatic testing and display the coverage result in the default web browser.
 
-
-## [Example Code]("./example.py")
 <img src="https://raw.githubusercontent.com/swe-students-spring2026/3-package-emperor_penguins/main/img/image.png" alt="image.png"  />
