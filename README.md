@@ -61,6 +61,8 @@ $ python -m pomodoro --work 25 --break 5 --cycles 4
 - `--work` (`-w`) — Work duration in minutes (default: 25)
 - `--break` (`-b`) — Break duration in minutes (default: 5)
 - `--cycles` (`-c`) — Number of Pomodoro cycles (default: 4)
+- `--history` – Print history of Pomodoro cycles with its ID and Durations
+- `--use-timer` - Paste timer ID from history and run it normally
 - `--version` (`-v`) — Show the version of the Pomodoro TUI and exit
 
 ### Example
