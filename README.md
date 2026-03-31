@@ -2,6 +2,9 @@
 
 An exercise to create a Python package, build it, test it, distribute it, and use it. See [instructions](./instructions.md) for details.
 
+
+[![Build and Test](https://github.com/swe-students-spring2026/3-package-emperor_penguins/actions/workflows/build-test.yaml/badge.svg)](https://github.com/swe-students-spring2026/3-package-emperor_penguins/actions/workflows/build-test.yaml)
+
 # Description
 
 This package provides a simple Pomodoro timer system that allows developers to create, store, and manage timers programmatically.
