@@ -78,7 +78,7 @@ This will show a history of pomodoro timers (timer ID, and work duration) that t
 ```
 python -m pomodoro --user-timer <timer_id>
 ```
-This will allow to use an old pomodoro timer, so that the user does not need to type in those lengthy work or break parameters.
+This will allow to use an old pomodoro timer the user has already customized.
 ```
 python -m pomodoro --version
 ```
