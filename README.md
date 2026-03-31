@@ -52,6 +52,8 @@ $ python -m pomodoro --work 25 --break 5 --cycles 4
 - `--work` (`-w`) — Work duration in minutes (default: 25)
 - `--break` (`-b`) — Break duration in minutes (default: 5)
 - `--cycles` (`-c`) — Number of Pomodoro cycles (default: 4)
+- `--history` – Print history of Pomodoro cycles with its ID and Durations
+- `--use-timer` - Paste timer ID from history and run it normally
 - `--version` (`-v`) — Show the version of the Pomodoro TUI and exit
 
 ### Example
@@ -133,4 +135,6 @@ The terminal will show the current sub-session and a progress bar for either stu
 
    - Ideally, this will launch an automatic testing and display the coverage result in the default web browser.
 
-<img src="./img/coverage-example.png" alt="coverage-example.png"  />
+
+## [Example Code]("./example.py")
+<img src="./img/image.png" alt="image.png"  />
