@@ -12,8 +12,8 @@ license = {file = "LICENSE"}
 authors = [
     {name="Michael Miao"},
     {name="Simon Ni"},
-    {name="Aryaman Nagpal"},
     {name="Lan Nguyen"},
+    {name="Aryaman Nagpal"},
     {name="Name"}
 ]
 keywords = ["pomodoro", "timer", "productivity", "TUI"]
