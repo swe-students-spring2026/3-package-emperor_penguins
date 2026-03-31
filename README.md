@@ -28,7 +28,7 @@ This package provides a simple Pomodoro timer system that allows developers to c
 Install the package via PyPI:
 
 ```bash
-$ python -m pip install pomodoro
+$ python -m pip install pomodoro-penguin
 ```
 
 or if you are installing locally:
